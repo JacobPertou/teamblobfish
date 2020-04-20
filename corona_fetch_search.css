@@ -18,3 +18,30 @@
 
 
 /* styles slide 3 */
+
+.greyBackground {
+    background-color: #ECECEC;
+}
+
+.guidelines {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.guidelinesGeneral {
+    text-align: center;
+    font-size: 2.5em;
+    color: white;
+    text-transform: uppercase;
+    height: 90%;
+    width: 90%;
+    margin-bottom: 10%;
+    background-color: #577158;
+    border-radius: 10%;
+}
+
+.guidelines img {
+    height: 70%;
+    width: 70%;
+    margin-top: 5%;
+}
