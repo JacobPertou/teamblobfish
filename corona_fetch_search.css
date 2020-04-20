@@ -3,18 +3,18 @@
     padding: 0;
     margin: 0;
     font-family: 'viga', 'sans-serif';
+    scroll-behavior: smooth;
 }
 
 .slide {
     height: 100vh;
 }
 
-/* styles, slide 1 */
+/* styles slide 1 */
 
 
 
-/* styles, slide 2 */
+/* styles slide 2 */
 
 
-
-/* styles, slide 3 */
+/* styles slide 3 */
