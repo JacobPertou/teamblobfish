@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,37 @@
   <link rel="stylesheet" href="corona_fetch_search.css">
   <link href='https://fonts.googleapis.com/css?family=Viga' rel='stylesheet'>
 </head>
+
 <body>
-  <section class="slide">
-  <!-- 1 slide - forside   -->
+  <section class="slide" id="home">
+    <!-- 1 slide - forside   -->
+    <section class="greyBackground">
+      <header>
+        <nav>
+          <ul>
+            <li><a href="#track">track</a></li>
+            <li><a href="#information">information</a></li>
+          </ul>
+        </nav>
+        <h1>Covid-19 recover<br>tracker</h1>
+      </header>
+      <section class="secondRow">
+        <section class="handBacteria">
+          <img src="pictures/bacteria.png" alt="bacteria" class="bacteria hovering">
+          <img src="pictures/hand.png" alt="hand" class="hand">
+        </section>
+        <section class="scrollArrow">
+          <a href="#track">
+            <h2>Track here</h2>
+            <img src="pictures/down-arrow (1).png" alt="arrow" class="scroll-down">
+          </a>
+        </section>
+      </section>
+    </section>
 
   </section>
-  
-  <section class="slide">
+
+  <section class="slide" id="track">
     <!-- 2 slide   -->
     <section class="green_background">
 
@@ -46,7 +71,7 @@
   </section>
 
 
-  <section class="slide">
+  <section class="slide" id="information">
     <!-- 3 slide   -->
     <section class="greyBackground">
       <section class="covid19Information">
@@ -76,9 +101,10 @@
         </article>
       </section>
     </section>
-  </section>  
+  </section>
 
 
   <script src="corona_fetch_search.js"></script>
 </body>
+
 </html>
