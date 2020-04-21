@@ -9,7 +9,7 @@ const totalConfirmed = document.querySelector('.totalConfirmed')
 
 function getData() {
     countrySearch = localStorage.getItem('countrySearch'); // get local storage
-    const url = `https://api.covid19api.com/total/country/${countrySearch}` // url that takes input value from form to get data from specific country
+    const url = `https://api.covid19api.com/total/country/${countrySearch}` // url that takes input value from form to get data from specific country using Template Literals
     console.log('Fetching data from: ' + url);
 
     fetch(url)  // send a request to the server
@@ -22,12 +22,20 @@ function getData() {
         console.log(data);
 
         // Insert your code here. Your data is available in the data variable
-        const todayData = data[data.length - 1]; // get last item in array that represents latest data and save in variable
-        console.log(todayData)
-        const recovered = todayData.Recovered // get Total Recovered data from latest data and save in variable
+        const latestData = data[data.length - 1]; // get last item in array that represents latest data
+        console.log(latestData)
+        const country = latestData.Country // get country value
+        console.log(country)
+        const latestDate = latestData.Date.split("T")[0]  // get date value, split it at "T" (just year, month and day, without hours)
+        console.log(latestDate)
+        const tempArray = latestDate.split("-") // split again, this time at "_"
+        console.log(tempArray)
+        const newDate = `${tempArray[2]}.${tempArray[1]}.${tempArray[0]}` // reassemble in a different order using Template Literals
+        console.log(newDate)
+        const recovered = latestData.Recovered // get Total Recovered value from latest data
         console.log(recovered)
-        totalRecovered.textContent = recovered // write data in html
-        const confirmed = todayData.Confirmed // get Total Confrimed data from latest data and save in variable
+        totalRecovered.textContent = recovered // write value in html
+        const confirmed = latestData.Confirmed // get Total Confrimed value from latest data
         console.log(confirmed)
         totalConfirmed.textContent = confirmed // write data in html
         const percentage1 = recovered / confirmed // calculate percentage 1

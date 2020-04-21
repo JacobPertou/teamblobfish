@@ -163,15 +163,15 @@ nav ul li {
 
 .hovering {
     -webkit-animation-name: hovering;
-    -webkit-animation-duration: 3s;
+    -webkit-animation-duration: 4s;
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-timing-function: ease-in-out;
     -moz-animation-name: hovering;
-    -moz-animation-duration: 3s;
+    -moz-animation-duration: 4s;
     -moz-animation-iteration-count: infinite;
     -moz-animation-timing-function: ease-in-out;
     animation-name: hovering;
-    animation-duration: 3s;
+    animation-duration: 4s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
 }
