@@ -15,8 +15,7 @@ a {
     color: unset;
 }
 
-header, .secondRow {
-    grid-column: 1 / 2;
+header, .thirdRow {
     display: flex;
     justify-content: space-between;
 }
@@ -51,28 +50,23 @@ nav ul li {
 
 .slide:nth-child(1) .greyBackground {
     display: grid;
-    grid-template-rows: 30% 70%;
-}
-
-.handBacteria {
-    display: grid;
-    grid-template-rows: 40% 60%;
+    grid-template-rows: 30% 30% 40%;
 }
 
 .bacteria {
-    max-height: 40%;
-    margin: 55px 0  0 38vh;
+    max-height: 100%;
+    margin: 55px 0  0 32vh;
 }
 
 .hand {
-    max-height: 60%;
+    max-height: 100%;
     margin-left: -20px;
     z-index: 2;
 }
 
 .slide:nth-child(2) {
     /* styles slide 2, background color just to see if it works*/
-    background-color: indianred;
+    background-color: white;
 }
 
 .slide:nth-child(3) {
@@ -114,6 +108,37 @@ nav ul li {
 .scrollArrow img {
     width: 50px;
 }
+
+
+/* main heading fade in animation */
+
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+.fade-in {
+	opacity:0;  /* make things invisible upon start */
+	-webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+	-moz-animation:fadeIn ease-in 1;
+	animation:fadeIn ease-in 1;
+
+	-webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+	-moz-animation-fill-mode:forwards;
+	animation-fill-mode:forwards;
+
+	-webkit-animation-duration:1s;
+	-moz-animation-duration:1s;
+	animation-duration:1s;
+}
+
+.fade-in {
+-webkit-animation-delay: 0.5s;
+-moz-animation-delay: 0.5s;
+animation-delay: 0.5s;
+}
+
+
+/* scroll-down arrow animation */
 
 /* .scroll-down {
 	animation: fade_move_down 2s ease-in-out infinite;
@@ -159,19 +184,20 @@ nav ul li {
    }
    }
 
+   
 /* Keyframe animation for bacteria */
 
 .hovering {
     -webkit-animation-name: hovering;
-    -webkit-animation-duration: 3s;
+    -webkit-animation-duration: 4s;
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-timing-function: ease-in-out;
     -moz-animation-name: hovering;
-    -moz-animation-duration: 3s;
+    -moz-animation-duration: 4s;
     -moz-animation-iteration-count: infinite;
     -moz-animation-timing-function: ease-in-out;
     animation-name: hovering;
-    animation-duration: 3s;
+    animation-duration: 4s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
 }
