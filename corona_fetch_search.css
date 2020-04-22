@@ -293,28 +293,40 @@ animation-delay: 0.5s;
 
 #countryForm{
     padding-bottom: 2em;
-   margin-top: -3em;
+    margin-top: -3em;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
 }
 
-#countryForm input{
-    width: 315px;
-    height: 60px;
+#countryForm input {
+    width: 270px;
+    height: 50px;
+    padding: 2px 0 0 20px;
     background: #FFFFFF;
     box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
     border: none;
-    font-size: 14px;
+    font-size: 16px;
+}
 
+#countryForm input[type="text"]{
+    width: 100%;
+    padding: 20px;
+    padding-right: 60px;
+    outline: none;
 }
 
 button{
 border: none;
-background-color: white;
-box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.25);
-border-radius: 30px;
-height: 50px;
-width: 65px;
-font-size: 14px;
+}
+
+.button-holder img{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-105%);
+    right: 20px;
+    width: 30px;
 }
 
 .counter_data{
