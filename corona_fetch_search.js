@@ -43,6 +43,24 @@ function getData() {
         const percentage2 = Math.round(percentage1 * 100) // calculate percentage 2
         console.log(percentage2)
         percentageRecovered.textContent = `${percentage2} %` // write data in html
+
+        const heading = document.querySelector(".heading")
+        const img = document.querySelector(".img_shadow")
+
+        if (percentage2 <= 20){
+        heading.textContent = "Hopefully it wil get better"
+    } else if (percentage2 <= 40)
+        heading.textContent = "It is getting better" 
+
+        else if (percentage2 <= 60)
+        heading.textContent = "So much better"
+
+        else if (percentage2 <= 80)
+        heading.textContent = "Verry good"
+
+        else if (percentage2 <= 100)
+        heading.textContent = "Great"
+
     })
     .catch(err => {
         // If something goes wrong and you don't receive a response from the server
@@ -61,3 +79,7 @@ countryName.addEventListener('submit', (event) => {
     event.target.elements.Country.value = ''  // clear the input field
     getData() // call function
 })
+
+//ad if else statement on pictures
+    
+    
