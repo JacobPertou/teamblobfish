@@ -65,13 +65,11 @@ nav ul li {
 }
 
 .slide:nth-child(2) {
-    /* styles slide 2, background color just to see if it works*/
     background-color: white;
-
+    overflow-y: scroll;
 }
 
 .slide:nth-child(3) {
-    /* styles slide 3, background color just to see if it works*/
     background-color: white;
 }
 
@@ -223,16 +221,36 @@ animation-delay: 0.5s;
 
 
 /* styles slide 2 */
-.green_background{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    justify-items: center;
+.green_background {
+    display: flex;
     background-color: #577158;
     height: 90vh;
     box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.534);
     border-radius: 0px 0px 0px 150px;
+    overflow-x: auto
+}
 
+.scrollWrapper {
+    width: 200vw;
+    display: flex;
+}
+
+.verticalSlideOne {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100vw;
+    align-items: center;
+    justify-items: center;
+}
+
+.verticalSlideTwo {
+    /* display: grid;
+    grid-template-columns: 1fr 1fr; */
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    align-items: center;
+    justify-items: center;
 }
 
 .illustration{
@@ -275,28 +293,40 @@ animation-delay: 0.5s;
 
 #countryForm{
     padding-bottom: 2em;
-   margin-top: -3em;
+    margin-top: -3em;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
 }
 
-#countryForm input{
-    width: 315px;
-    height: 60px;
+#countryForm input {
+    width: 270px;
+    height: 50px;
+    padding: 2px 0 0 20px;
     background: #FFFFFF;
     box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
     border: none;
-    font-size: 14px;
+    font-size: 16px;
+}
 
+#countryForm input[type="text"]{
+    width: 100%;
+    padding: 20px;
+    padding-right: 60px;
+    outline: none;
 }
 
 button{
 border: none;
-background-color: white;
-box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.25);
-border-radius: 30px;
-height: 50px;
-width: 65px;
-font-size: 14px;
+}
+
+.button-holder img{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-105%);
+    right: 20px;
+    width: 30px;
 }
 
 .counter_data{
