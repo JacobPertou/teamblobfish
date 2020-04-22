@@ -46,6 +46,9 @@ function getData() {
     })
     .catch(err => {
         // If something goes wrong and you don't receive a response from the server
+        totalRecovered.textContent = ""
+        totalConfirmed.textContent = ""
+        percentageRecovered.textContent = "No data available"
       })
 };
 
