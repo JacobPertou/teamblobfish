@@ -1,3 +1,4 @@
+/* general styles */
 * {
     box-sizing: border-box;
     padding: 0;
@@ -6,9 +7,21 @@
     scroll-behavior: smooth;
 }
 
+.secondFontColor {
+    color: white;
+}
+
 h1, h2, h3, h4, a {
     text-transform: uppercase;
     font-family: 'viga', 'sans-serif'
+}
+
+h1 {
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 20px;
 }
 
 a {
@@ -30,11 +43,22 @@ nav ul li {
     margin-right: 30px;
 }
 
+.scrollArrow {
+    text-align: center;
+    margin: 0 100px 50px 0;
+    align-self: flex-end;
+}
+
+.scrollArrow img {
+    width: 50px;
+}
+
 .slide {
     height: 100vh;
     width: 100vw;
 }
 
+/* styles for slide one */
 .slide:nth-child(1) {
     background-color: white;
     width: 100vw;
@@ -65,11 +89,14 @@ nav ul li {
     z-index: 2;
 }
 
+/* styles for slide two */
 .slide:nth-child(2) {
     background-color: white;
     overflow-y: scroll;
 }
 
+
+/* styles for slide three */
 .slide:nth-child(3) {
     background-color: white;
 }
@@ -81,11 +108,26 @@ nav ul li {
     box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.25);
 }
 
+.covid19Information {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutCovid19 {
+    background-color: #577158;
+    width: 80vw;
+    margin: 50px;
+    padding: 40px;
+    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+}
+
 .guidelines {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    justify-items: center;
-    margin-top: 50px;
+    display: flex;
+    width: 80vw;
+    justify-content: space-between;
 }
 
 .guidelines img {
@@ -95,18 +137,11 @@ nav ul li {
     box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.25);
 }
 
-.scrollArrow {
-    text-align: center;
-    margin: 0 100px 50px 0;
-    align-self: flex-end;
-}
-
-.scrollArrow h2 {
-    font-weight: lighter;
-}
-
-.scrollArrow img {
-    width: 50px;
+footer {
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -354,12 +389,6 @@ border-radius: 30px;
     color: #993434;
 }
 
-footer {
-    height: 10vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 
 
