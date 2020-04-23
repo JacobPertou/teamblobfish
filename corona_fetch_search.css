@@ -2,12 +2,13 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    font-family: 'viga', 'sans-serif';
+    font-family: 'roboto', 'sans-serif';
     scroll-behavior: smooth;
 }
 
-h1, h2, h3, h4, nav {
+h1, h2, h3, h4, a {
     text-transform: uppercase;
+    font-family: 'viga', 'sans-serif'
 }
 
 a {
@@ -84,7 +85,7 @@ nav ul li {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     justify-items: center;
-    margin-top: 20%;
+    margin-top: 50px;
 }
 
 .guidelines img {
@@ -246,11 +247,10 @@ animation-delay: 0.5s;
 .verticalSlideTwo {
     /* display: grid;
     grid-template-columns: 1fr 1fr; */
+    width: 100vw;
     display: flex;
     justify-content: center;
-    width: 100vw;
     align-items: center;
-    justify-items: center;
 }
 
 .illustration{
@@ -267,7 +267,7 @@ animation-delay: 0.5s;
     max-width: 75%;
     justify-self: center;
     align-self: center;
-   margin-left: 6em;
+    margin-left: 6em;
 }
 
 .down_arrow{
@@ -354,6 +354,12 @@ border-radius: 30px;
     color: #993434;
 }
 
+footer {
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
 
