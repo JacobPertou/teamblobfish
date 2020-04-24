@@ -297,7 +297,7 @@ animation-delay: 0.5s;
 }
 
 .img_shadow{
-    max-width: 75%;
+    max-width: 80%;
     justify-self: center;
     align-self: center;
     margin-left: 6em;
@@ -305,16 +305,16 @@ animation-delay: 0.5s;
 
 .down_arrow{
     max-width: 30px;
-    position: absolute;
-    top: 1430px;
-    left: 345px;
+    margin-bottom: -3em;
+    margin-left: -7em;
+   
   
 }
 
 .illustration a{
     text-decoration: none;
     color: white;
-    margin-left: -22em;
+    margin-left: -24em;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
@@ -388,7 +388,25 @@ border: none;
     margin-top: 1em;
 }
 
+.red{
+    color: #993434;
+}
 
+.orange{
+    color: #CC7B44;
+}
+
+.yellow{
+    color: #b2ad19;
+}
+
+.light_green{
+    color: #A1C358;
+}
+
+.green{
+    color: #52A352;
+}
 
 
 

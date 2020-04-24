@@ -65,28 +65,27 @@ function setColor () {
         if (percentage2 <= 20){
             heading.textContent = "Hopefully it wil get better"
             img.setAttribute('src', 'pictures/red.png')
+
             percentageRecovered.setAttribute("style", "color: #993434")
         }   else if (percentage2 <= 40){
             heading.textContent = "It is getting a litle better" 
             img.setAttribute('src', 'pictures/orange.png')
-            percentageRecovered.setAttribute("style", "color:#CC7B44 ")
+            percentageRecovered.classList.add("orange")
 
         }   else if (percentage2 <= 60){
             heading.textContent = "It is geting much better"
             img.setAttribute('src', 'pictures/yellow.png')
-            percentageRecovered.setAttribute("style", "color: #b2ad19")
-
+            percentageRecovered.classList.add("yellow")
 
         }   else if (percentage2 <= 80){
             heading.textContent = "Its is going verry good"
             img.setAttribute('src', 'pictures/light_green.png')
-            percentageRecovered.setAttribute("style", "color:#A1C358 ")
-
+            percentageRecovered.classList.add("light_green")
 
         }   else if (percentage2 <= 100){
             heading.textContent = "It seems that everything is going Great"
             img.setAttribute('src', 'pictures/green.png')
-            percentageRecovered.setAttribute("style", "color:#52A352 ")
+            percentageRecovered.classList.add("green")
         }
     }
 
