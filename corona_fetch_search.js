@@ -2,8 +2,8 @@ const countryName = document.querySelector('#countryForm');
 const percentageRecovered = document.querySelector('.percentageRecovered')
 const totalRecovered = document.querySelector('.totalRecovered')
 const totalConfirmed = document.querySelector('.totalConfirmed')
-
-
+const dataCountry = document.querySelector('.dataCountry')
+const dataDate = document.querySelector('.dataDate')
 
 
 
@@ -26,12 +26,14 @@ function getData() {
         console.log(latestData)
         const country = latestData.Country // get country value
         console.log(country)
+        dataCountry.textContent = country
         const latestDate = latestData.Date.split("T")[0]  // get date value, split it at "T" (just year, month and day, without hours)
         console.log(latestDate)
         const tempArray = latestDate.split("-") // split again, this time at "_"
         console.log(tempArray)
         const newDate = `${tempArray[2]}.${tempArray[1]}.${tempArray[0]}` // reassemble in a different order using Template Literals
         console.log(newDate)
+        dataDate.textContent = newDate
         const recovered = latestData.Recovered // get Total Recovered value from latest data
         console.log(recovered)
         totalRecovered.textContent = recovered // write value in html
