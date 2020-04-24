@@ -344,10 +344,15 @@ animation-delay: 0.5s;
 }
 
 #countryForm input[type="text"]{
-    width: 100%;
+    width: 84%;
     padding: 20px;
     padding-right: 60px;
     outline: none;
+}
+
+.globalButton {
+    width: 52px;
+    filter: drop-shadow(4px 4px 20px rgba(0, 0, 0, 0.25));
 }
 
 button{
@@ -358,21 +363,21 @@ border: none;
     position: absolute;
     top: 50%;
     transform: translateY(-105%);
-    right: 20px;
+    right: 70px;
     width: 30px;
 }
 
 .counter_data{
-background-color: white;
-width: 380px;
-height: 470px;
-background: #FFFFFF;
-box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
-border-radius: 30px;
+    background-color: white;
+    width: 380px;
+    height: 470px;
+    background: #FFFFFF;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
 }
 
 .counter_data  p{
-    font-size: 40px;
+    font-size: 30px;
     margin-left: 0.7em;
     margin-top: 0.1em;
 }
