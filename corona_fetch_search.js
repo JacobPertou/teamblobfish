@@ -5,11 +5,13 @@ const percentageRecovered = document.querySelector('.percentageRecovered')
 const totalRecovered = document.querySelector('.totalRecovered')
 const totalConfirmed = document.querySelector('.totalConfirmed')
 const globalButton = document.querySelector('.globalButton')
-
+let percentage2
+const heading = document.querySelector(".heading")
+const img = document.querySelector(".img_shadow")
 
 
 function getData() {
-
+// if local storage available run getLocalData(), else run getGlobalData()
 if('countrySearch' in localStorage){
     getLocalData() // call function
     console.log ("run getLocalData")
@@ -38,72 +40,19 @@ function getLocalData() {
         const country = latestData.Country // get country value
         console.log(country)
         countryValue.textContent = country
-        const latestDate = latestData.Date.split("T")[0]  // get date value, split it at "T" (just year, month and day, without hours)
-        console.log(latestDate)
-        const tempArray = latestDate.split("-") // split again, this time at "_"
-        console.log(tempArray)
-        const newDate = `${tempArray[2]}.${tempArray[1]}.${tempArray[0]}` // reassemble in a different order using Template Literals
-        console.log(newDate)
-        dateValue.textContent = newDate
+        const latestDate = latestData.Date  // get date value, split it at "T" (just year, month and day, without hours)
         const recovered = latestData.Recovered // get Total Recovered value from latest data
         console.log(recovered)
         const confirmed = latestData.Confirmed // get Total Confrimed value from latest data
         console.log(confirmed)
-        totalConfirmed.textContent = `${confirmed} Confirmed` // write data in html
-        const percentage1 = recovered / confirmed // calculate percentage 1
-        console.log(percentage1)
-        const percentage2 = Math.round(percentage1 * 100) // calculate percentage 2
-        console.log(percentage2)
-        percentageRecovered.textContent = `${recovered} (${percentage2}%) Recovered` // write data in html
-        setColor () // call function
-        
-
-function setColor () {
-        const heading = document.querySelector(".heading")
-        const img = document.querySelector(".img_shadow")
-
-        if (percentage2 <= 20){
-            heading.textContent = "Hopefully it wil get better"
-            img.setAttribute('src', 'pictures/red.png')
-
-            percentageRecovered.setAttribute("style", "color: #993434")
-        }   else if (percentage2 <= 40){
-            heading.textContent = "It is getting a litle better" 
-            img.setAttribute('src', 'pictures/orange.png')
-            percentageRecovered.classList.add("orange")
-
-        }   else if (percentage2 <= 60){
-            heading.textContent = "It is geting much better"
-            img.setAttribute('src', 'pictures/yellow.png')
-            percentageRecovered.classList.add("yellow")
-
-        }   else if (percentage2 <= 80){
-            heading.textContent = "Its is going verry good"
-            img.setAttribute('src', 'pictures/light_green.png')
-            percentageRecovered.classList.add("light_green")
-
-        }   else if (percentage2 <= 100){
-            heading.textContent = "It seems that everything is going Great"
-            img.setAttribute('src', 'pictures/green.png')
-            percentageRecovered.classList.add("green")
-        }
-    }
-
+        writeAndCalculate(recovered, confirmed, latestDate)
     })
     .catch(err => {
-        // If something goes wrong and you don't receive a response from the server
-        countryValue.textContent = ""
-        dateValue.textContent = ""
-        totalConfirmed.textContent = ""
-        percentageRecovered.textContent = "No data available"
-      })
-
-      globalButton.addEventListener('click', (event) => {
-        event.preventDefault() // prevent the browsers dafault bahaviour, inserting the value in the URL
-        localStorage.clear('countrySearch', countrySearch); // clear local storage
-        getGlobalData() // call function
+        // If something goes wrong and you don't receive a response from the server 
+        error()
     })
 };
+
 
 function getGlobalData() {
     countrySearch = localStorage.getItem('countrySearch'); // get local storage
@@ -121,69 +70,80 @@ function getGlobalData() {
 
         // Insert your code here. Your data is available in the data variable
         countryValue.textContent = "Worldwide"
-        const latestDate = data.Date.split("T")[0]  // get date value, split it at "T" (just year, month and day, without hours)
+        const latestDate = data.Date  // get date value, split it at "T" (just year, month and day, without hours)
         console.log(latestDate)
-        const tempArray = latestDate.split("-") // split again, this time at "_"
-        console.log(tempArray)
-        const newDate = `${tempArray[2]}.${tempArray[1]}.${tempArray[0]}` // reassemble in a different order using Template Literals
-        console.log(newDate)
-        dateValue.textContent = newDate
         const recovered = data.Global.TotalRecovered // get Total Recovered value from latest data
         console.log(recovered)
         const confirmed = data.Global.TotalConfirmed // get Total Confrimed value from latest data
         console.log(confirmed)
-        totalConfirmed.textContent = `${confirmed} Confirmed` // write data in html
-        const percentage1 = recovered / confirmed // calculate percentage 1
-        console.log(percentage1)
-        const percentage2 = Math.round(percentage1 * 100) // calculate percentage 2
-        console.log(percentage2)
-        percentageRecovered.textContent = `${recovered} (${percentage2}%) Recovered` // write data in html
-        setColor () // call function
-        
-
-function setColor () {
-        const heading = document.querySelector(".heading")
-        const img = document.querySelector(".img_shadow")
-
-        if (percentage2 <= 20){
-            heading.textContent = "Hopefully it wil get better"
-            img.setAttribute('src', 'pictures/red.png')
-            percentageRecovered.setAttribute("style", "color: #993434")
-        }   else if (percentage2 <= 40){
-            heading.textContent = "It is getting a litle better" 
-            img.setAttribute('src', 'pictures/orange.png')
-            percentageRecovered.classList.add("orange")
-
-        }   else if (percentage2 <= 60){
-            heading.textContent = "It is geting much better"
-            img.setAttribute('src', 'pictures/yellow.png')
-            percentageRecovered.classList.add("yellow")
-
-
-        }   else if (percentage2 <= 80){
-            heading.textContent = "Its is going verry good"
-            img.setAttribute('src', 'pictures/light_green.png')
-            percentageRecovered.classList.add("light_green")
-
-
-        }   else if (percentage2 <= 100){
-            heading.textContent = "It seems that everything is going Great"
-            img.setAttribute('src', 'pictures/green.png')
-            percentageRecovered.classList.add("green")
-        }
-    }
-
+        writeAndCalculate(recovered, confirmed, latestDate)
     })
     .catch(err => {
         // If something goes wrong and you don't receive a response from the server
-            countryValue.textContent = ""
-            dateValue.textContent = ""
-            totalConfirmed.textContent = ""
-            percentageRecovered.textContent = "No data available"
-      })
+        error()
+    })
 };
 }
 
+function writeAndCalculate(recovered, confirmed, latestDate) {
+        const latestDateNew = latestDate.split("T")[0]
+        const tempArray = latestDateNew.split("-") // split again, this time at "_"
+        console.log(tempArray)
+        const newDate = `${tempArray[2]}.${tempArray[1]}.${tempArray[0]}` // reassemble in a different order using Template Literals
+        console.log(newDate)
+        dateValue.textContent = newDate
+        totalConfirmed.textContent = `${confirmed} Confirmed` // write data in html
+        const percentage1 = recovered / confirmed // calculate percentage 1
+        console.log(percentage1)
+        let percentage2 = Math.round(percentage1 * 100) // calculate percentage 2
+        console.log(percentage2)
+        percentageRecovered.textContent = `${recovered} (${percentage2}%) Recovered` // write data in html
+        setColor(percentage2) // call function
+        console.log ("run setColor")
+}
+
+// if else for pictures, colors and headings
+function setColor(percentage2) {
+    console.log("setColor is running")
+    console.log(percentage2)
+        if (percentage2 <= 20){
+        heading.textContent = "Hopefully it wil get better"
+        img.setAttribute('src', 'pictures/red.png')
+        percentageRecovered.setAttribute("style", "color: #993434")
+        console.log("setColor is still running")
+    }   else if (percentage2 <= 40){
+        heading.textContent = "It is getting a litle better" 
+        img.setAttribute('src', 'pictures/orange.png')
+        percentageRecovered.classList.add("orange")
+        console.log("setColor is still running")
+    }   else if (percentage2 <= 60){
+        heading.textContent = "It is geting much better"
+        img.setAttribute('src', 'pictures/yellow.png')
+        percentageRecovered.classList.add("yellow")
+        console.log("setColor is still running")
+    }   else if (percentage2 <= 80){
+        heading.textContent = "Its is going verry good"
+        img.setAttribute('src', 'pictures/light_green.png')
+        percentageRecovered.classList.add("light_green")
+        console.log("setColor is still running")
+    }   else if (percentage2 <= 100){
+        heading.textContent = "It seems that everything is going Great"
+        img.setAttribute('src', 'pictures/green.png')
+        percentageRecovered.classList.add("green")
+        console.log("setColor is still running")
+    }
+};
+
+// runs if something goes wrong and you don't receive a response from the server
+function error() {
+        countryValue.textContent = ""
+        dateValue.textContent = ""
+        totalConfirmed.textContent = ""
+        percentageRecovered.textContent = "No data available"
+        percentageRecovered.classList.remove("red", "orange", "yellow", "light_green", "green", )
+        heading.textContent = "error"
+        img.setAttribute('src', 'pictures/error.png')
+}
 
 
 
@@ -200,6 +160,9 @@ countryName.addEventListener('submit', (event) => {
     getData() // call function
 })
 
-//ad if else statement on pictures
-    
-    
+// Event listener on global button
+globalButton.addEventListener('click', (event) => {
+    event.preventDefault() // prevent the browsers dafault bahaviour, inserting the value in the URL
+    localStorage.clear('countrySearch', countrySearch); // clear local storage
+    getData() // call function
+})
