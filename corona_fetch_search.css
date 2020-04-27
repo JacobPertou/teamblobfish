@@ -267,7 +267,6 @@ button{
 }
 
 
-
 .covid19Information {
     display: grid;
     grid-template-columns: auto;
@@ -296,7 +295,6 @@ button{
     font-size: 16px;
     padding-left: 1em;
     text-transform: lowercase;
-
 }
 
 .guidelines {
@@ -317,10 +315,16 @@ button{
     margin: 0 100px 50px 0;
     position: absolute;
     right: 20px;
+    margin-top: 6vh;
+}
+
+.scrollUpArrow h2 {
+    font-size: 0.8em;
 }
 
 .scrollUpArrow img {
-    width: 50px;
+    height: 30px;
+    width: 30px;
     -webkit-transform:rotate(180deg);
     -moz-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
@@ -329,7 +333,7 @@ button{
 }
 
 footer {
-    height: 10vh;
+    height: 20vh;
     display: flex;
     justify-content: center;
     align-items: center;
