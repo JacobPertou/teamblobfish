@@ -146,6 +146,8 @@ function error() {
 
 
 
+
+
 // Event listener on window
 window.addEventListener('load', getData, false); // call function when page load
 
