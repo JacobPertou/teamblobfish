@@ -5,7 +5,6 @@ const percentageRecovered = document.querySelector('.percentageRecovered')
 const totalRecovered = document.querySelector('.totalRecovered')
 const totalConfirmed = document.querySelector('.totalConfirmed')
 const globalButton = document.querySelector('.globalButton')
-let percentage2
 const heading = document.querySelector(".heading")
 const img = document.querySelector(".img_shadow")
 
@@ -107,27 +106,27 @@ function setColor(percentage2) {
     console.log("setColor is running")
     console.log(percentage2)
         if (percentage2 <= 20){
-        heading.textContent = "Hopefully it wil get better"
+        heading.textContent = "Hopefully it will get better"
         img.setAttribute('src', 'pictures/red.png')
         percentageRecovered.setAttribute("style", "color: #993434")
         console.log("setColor is still running")
     }   else if (percentage2 <= 40){
-        heading.textContent = "It is getting a litle better" 
+        heading.textContent = "It is getting a little better" 
         img.setAttribute('src', 'pictures/orange.png')
         percentageRecovered.classList.add("orange")
         console.log("setColor is still running")
     }   else if (percentage2 <= 60){
-        heading.textContent = "It is geting much better"
+        heading.textContent = "It is getting much better"
         img.setAttribute('src', 'pictures/yellow.png')
         percentageRecovered.classList.add("yellow")
         console.log("setColor is still running")
     }   else if (percentage2 <= 80){
-        heading.textContent = "Its is going verry good"
+        heading.textContent = "It is going very good"
         img.setAttribute('src', 'pictures/light_green.png')
         percentageRecovered.classList.add("light_green")
         console.log("setColor is still running")
     }   else if (percentage2 <= 100){
-        heading.textContent = "It seems that everything is going Great"
+        heading.textContent = "It seems that everything is going great"
         img.setAttribute('src', 'pictures/green.png')
         percentageRecovered.classList.add("green")
         console.log("setColor is still running")
