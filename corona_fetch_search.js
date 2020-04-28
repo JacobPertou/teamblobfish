@@ -145,9 +145,6 @@ function error() {
 }
 
 
-
-
-
 // Event listener on window
 window.addEventListener('load', getData, false); // call function when page load
 
@@ -170,7 +167,7 @@ globalButton.addEventListener('click', (event) => {
 
 // Remove hash tag from URL
     // Setup the function to remove hashtags and add event listeners
-let linksToHaveHashRemoved = document.querySelectorAll(".removeHashTag");
+    let linksToHaveHashRemoved = document.querySelectorAll(".removeHashTag");
     // for each of these, add an eventlistener that calls the removeHashTagFromURL
 linksToHaveHashRemoved.forEach(function (element) {
     element.addEventListener("click", function () {
