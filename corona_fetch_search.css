@@ -49,7 +49,7 @@ nav ul li {
 
 .greyBackground li a {
     text-transform: uppercase;
-    font-family: viga;
+    font-family: 'viga', 'sans-serif';
 }
 
 .scrollArrow {
@@ -80,6 +80,7 @@ nav ul li {
 .slide:nth-child(1) .greyBackground {
     display: grid;
     grid-template-rows: 30% 30% 40%;
+    grid-auto-columns: 100%;
 }
 
 .slide:nth-child(1) .scrollArrow {
@@ -140,7 +141,7 @@ nav ul li {
     text-decoration: none;
     color: white;
     text-align: center;
-    font-family: roboto;
+    font-family: 'roboto', 'sans-serif';
 }
 
 .counter{
@@ -218,19 +219,19 @@ button{
 }
 
 .white_box_one h3 {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'roboto', 'sans-serif';
     font-weight: normal;
     margin-top: 8px;
     text-transform: uppercase;
 }
 
 .totalConfirmed{
-    font-family: viga;
+    font-family: 'viga', 'sans-serif';
     font-size: 2em;
 }
 
 .totalRecovered{
-    font-family: viga;
+    font-family: 'viga', 'sans-serif';
     font-size: 2em;
 }
 
@@ -245,14 +246,14 @@ button{
 }
 
 .white_box_two h3 {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'roboto', 'sans-serif';
     font-weight: normal;
     margin-top: 8px;
     text-transform: uppercase;
 }
 
 .percentageRecovered{
-    font-family: viga;
+    font-family: 'viga', 'sans-serif';
     font-size: 5em;
 }
 
@@ -351,7 +352,7 @@ button{
 
 
 .aboutCovid19 p{
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'roboto', 'sans-serif';
     font-size: 16px;
     text-transform: lowercase;
     margin-top: 0.3em;
@@ -366,6 +367,7 @@ button{
 
 .guidelines img {
     width: 15%;
+    height: 15%;
     border-radius: 30px;
     box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.25);
 }
