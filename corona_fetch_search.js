@@ -10,6 +10,9 @@ const totalConfirmed = document.querySelector('.totalConfirmed')
 const globalButton = document.querySelector('.globalButton')
 const heading = document.querySelector(".heading")
 const img = document.querySelector(".img_shadow")
+const recover = document.querySelector(".recover")
+const confirmedH3 = document.querySelector(".confirmedH3")
+const recoverH3 = document.querySelector(".recoverH3")
 
 
 function getData() {
@@ -133,26 +136,42 @@ function setColor(percentage2) {
     console.log(percentage2)
         if (percentage2 <= 20){
         heading.textContent = "Hopefully it will get better"
+        recover.textContent = "percentage Recovered" 
+        confirmedH3.textContent = "Confirmed" 
+        recoverH3.textContent = "Recovered" 
         img.setAttribute('src', 'pictures/red.png')
-        percentageRecovered.setAttribute("style", "color: #993434")
+        percentageRecovered.classList.add ("red")
         console.log("setColor is still running")
+        
     }   else if (percentage2 <= 40){
-        heading.textContent = "It is getting a little better" 
+        heading.textContent = "It is getting a little better"
+        recover.textContent = "percentage Recovered" 
+        confirmedH3.textContent = "Confirmed" 
+        recoverH3.textContent = "Recovered" 
         img.setAttribute('src', 'pictures/orange.png')
         percentageRecovered.classList.add("orange")
         console.log("setColor is still running")
     }   else if (percentage2 <= 60){
         heading.textContent = "It is getting much better"
+        recover.textContent = "percentage Recovered" 
+        confirmedH3.textContent = "Confirmed" 
+        recoverH3.textContent = "Recovered" 
         img.setAttribute('src', 'pictures/yellow.png')
         percentageRecovered.classList.add("yellow")
         console.log("setColor is still running")
     }   else if (percentage2 <= 80){
         heading.textContent = "It is going very good"
+        recover.textContent = "percentage Recovered" 
+        confirmedH3.textContent = "Confirmed" 
+        recoverH3.textContent = "Recovered" 
         img.setAttribute('src', 'pictures/light_green.png')
         percentageRecovered.classList.add("light_green")
         console.log("setColor is still running")
     }   else if (percentage2 <= 100){
         heading.textContent = "It seems that everything is going great"
+        recover.textContent = "percentage Recovered" 
+        confirmedH3.textContent = "Confirmed" 
+        recoverH3.textContent = "Recovered" 
         img.setAttribute('src', 'pictures/green.png')
         percentageRecovered.classList.add("green")
         console.log("setColor is still running")
@@ -163,8 +182,8 @@ function setColor(percentage2) {
 function error() {
         countryValue.textContent = ""
         dateValue.textContent = ""
-        totalConfirmed.textContent = ""
-        percentageRecovered.textContent = "No data available"
+        totalConfirmed.textContent = "No data available"
+        percentageRecovered.textContent = ""
         percentageRecovered.classList.remove("red", "orange", "yellow", "light_green", "green", )
         heading.textContent = "error"
         img.setAttribute('src', 'pictures/error.png')
