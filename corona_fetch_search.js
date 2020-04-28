@@ -170,6 +170,7 @@ function error() {
         img.setAttribute('src', 'pictures/error.png')
 }
 
+
 function chartIt() {
     console.log("chartIt is running")
     const ctx = document.querySelector('#myChart').getContext('2d');
@@ -201,7 +202,6 @@ function chartIt() {
     }
 
 
-
 // Event listener on window
 window.addEventListener('load', getData, false); // call function when page load
 
@@ -222,3 +222,23 @@ globalButton.addEventListener('click', (event) => {
     localStorage.clear('countrySearch', countrySearch); // clear local storage
     getData() // call function
 })
+
+// Remove hash tag from URL
+    // Setup the function to remove hashtags and add event listeners
+    let linksToHaveHashRemoved = document.querySelectorAll(".removeHashTag");
+    // for each of these, add an eventlistener that calls the removeHashTagFromURL
+linksToHaveHashRemoved.forEach(function (element) {
+    element.addEventListener("click", function () {
+    event.preventDefault(); // we want the browser to stop it's default behavior
+    removeHashTagFromURL(event.currentTarget); // all the function that actually removes the hashtag
+})
+});
+    // function which removes the hashtag from the url
+function removeHashTagFromURL(target) {
+console.log("RemoveHashTag was called from:");
+console.log(target);
+    // Here comes the code that removes the hash from the URL
+    // From https://stackoverflow.com/a/5298684
+console.log(window.location.hash = target.getAttribute("href"));
+history.pushState("", document.title, window.location.pathname + window.location.search);
+}
