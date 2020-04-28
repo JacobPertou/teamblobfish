@@ -11,10 +11,16 @@
     color: white;
 }
 
-h1, h2, h3, h4, h5, a {
+h1, h2, h4{
     text-transform: uppercase;
     font-family: 'viga', 'sans-serif';
 }
+
+a{
+    text-decoration: none;
+    color: unset;
+}
+
 
 h1 {
     font-size: 40px;
@@ -24,10 +30,8 @@ h2 {
     font-size: 20px;
 }
 
-a {
-    text-decoration: none;
-    color: unset;
-}
+
+
 
 header, .thirdRow {
     display: flex;
@@ -41,6 +45,11 @@ nav {
 nav ul li {
     display: inline;
     margin-right: 30px;
+}
+
+.greyBackground li a {
+    text-transform: uppercase;
+    font-family: viga;
 }
 
 .scrollArrow {
@@ -208,6 +217,23 @@ button{
     padding: 15px;
 }
 
+.white_box_one h3 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: normal;
+    margin-top: 8px;
+    text-transform: uppercase;
+}
+
+.totalConfirmed{
+    font-family: viga;
+    font-size: 2em;
+}
+
+.totalRecovered{
+    font-family: viga;
+    font-size: 2em;
+}
+
 .white_box_two{
     width: 265px;
     height: 180px;
@@ -216,6 +242,18 @@ button{
     border-radius: 30px;
     margin-top: 1em;
     padding: 15px;
+}
+
+.white_box_two h3 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: normal;
+    margin-top: 8px;
+    text-transform: uppercase;
+}
+
+.percentageRecovered{
+    font-family: viga;
+    font-size: 5em;
 }
 
 .chart{
@@ -229,15 +267,36 @@ button{
 
 .country_info{
     display: flex;
-    margin-left: 12em;
+    margin-left: 10em;
 }
 .country_info p{
     color: rgb(112, 112, 112);
+    margin-left: 1em;
 }
 
 .chartData {
     width: 500px;
     margin: 10px auto;
+}
+
+.red{
+    color: #993434;
+}
+
+.orange{
+    color: #CC7B44;
+}
+
+.yellow{
+    color: #b2ad19;
+}
+
+.light_green{
+    color: #A1C358;
+}
+
+.green{
+    color: #52A352;
 }
 
 
@@ -289,9 +348,7 @@ button{
     border-radius: 30px;
 }
 
-.aboutCovid19 h2{
-    font-size: 30px;
-}
+
 
 .aboutCovid19 p{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
