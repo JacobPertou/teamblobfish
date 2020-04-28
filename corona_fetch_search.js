@@ -1,6 +1,8 @@
 let i;
 const xlabels = []
 const ypercentage = []
+const globalXlabels = []
+const globalYpercentage = []
 const countryName = document.querySelector('#countryForm');
 const countryValue = document.querySelector('.countryValue')
 const dateValue = document.querySelector('.dateValue')
@@ -103,7 +105,14 @@ function getGlobalData() {
         console.log(recovered)
         const confirmed = data.Global.TotalConfirmed // get Total Confrimed value from latest data
         console.log(confirmed)
+        const newConfirmed = data.Global.NewConfirmed
+        const newRecovered = data.Global.NewRecovered
+        globalXlabels.push(newConfirmed)
+        globalXlabels.push(newRecovered)
+        globalXlabels.push(confirmed)
+        globalXlabels.push(recovered)
         writeAndCalculate(recovered, confirmed, latestDate)
+        chartGlobalData()
     })
     .catch(err => {
         // If something goes wrong and you don't receive a response from the server
@@ -189,6 +198,46 @@ function error() {
         img.setAttribute('src', 'pictures/error.png')
 }
 
+function chartGlobalData() {
+    console.log("chartGlobalData is running")
+    const ctx = document.querySelector('#myChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['New Confirmed', 'New Recovered', 'Total Confirmed', 'Total Recovered'],
+            datasets: [{
+                label: '# of Votes',
+                data: globalXlabels,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+}
 
 function chartIt() {
     console.log("chartIt is running")
