@@ -1,3 +1,6 @@
+let i;
+const xlabels = []
+const ypercentage = []
 const countryName = document.querySelector('#countryForm');
 const countryValue = document.querySelector('.countryValue')
 const dateValue = document.querySelector('.dateValue')
@@ -11,12 +14,13 @@ const img = document.querySelector(".img_shadow")
 
 function getData() {
 // if local storage available run getLocalData(), else run getGlobalData()
-if('countrySearch' in localStorage){
+    if('countrySearch' in localStorage){
     getLocalData() // call function
     console.log ("run getLocalData")
-} else {
+    } else {
     getGlobalData(); // call function
     console.log ("run getGlobalData")
+    }
 }
 
 function getLocalData() {
@@ -45,6 +49,27 @@ function getLocalData() {
         const confirmed = latestData.Confirmed // get Total Confrimed value from latest data
         console.log(confirmed)
         writeAndCalculate(recovered, confirmed, latestDate)
+        console.log("data length"+data.length)
+
+        for (i = 0; i < data.length; i++) {
+            chartDate1 = data[i].Date
+            chartDate2 = chartDate1.split("T")[0]
+            chartDate3 = chartDate2.split("-")
+            chartDate4 = `${chartDate3[2]}.${chartDate3[1]}`
+            xlabels.push(chartDate4)
+    
+            chartCorfirmed = data[i].Confirmed
+            console.log(chartCorfirmed)
+            chartRecovered = data[i].Recovered
+            console.log(chartRecovered)
+            chartPercentage1 = chartRecovered / chartCorfirmed // calculate chartPercentage1
+            chartPercentage2 = Math.round(chartPercentage1 * 100) // calculate chartPercentage2
+            console.log(chartPercentage2)
+            ypercentage.push(chartPercentage2)
+        }
+        
+        chartIt()
+
     })
     .catch(err => {
         // If something goes wrong and you don't receive a response from the server 
@@ -82,7 +107,7 @@ function getGlobalData() {
         error()
     })
 };
-}
+
 
 function writeAndCalculate(recovered, confirmed, latestDate) {
         const latestDateNew = latestDate.split("T")[0]
@@ -91,12 +116,13 @@ function writeAndCalculate(recovered, confirmed, latestDate) {
         const newDate = `${tempArray[2]}.${tempArray[1]}.${tempArray[0]}` // reassemble in a different order using Template Literals
         console.log(newDate)
         dateValue.textContent = newDate
-        totalConfirmed.textContent = `${confirmed} Confirmed` // write data in html
+        totalConfirmed.textContent = `${confirmed}` // write data in html
+        totalRecovered.textContent = `${recovered}`
         const percentage1 = recovered / confirmed // calculate percentage 1
         console.log(percentage1)
         let percentage2 = Math.round(percentage1 * 100) // calculate percentage 2
         console.log(percentage2)
-        percentageRecovered.textContent = `${recovered} (${percentage2}%) Recovered` // write data in html
+        percentageRecovered.textContent = `${percentage2}%` // write data in html
         setColor(percentage2) // call function
         console.log ("run setColor")
 }
@@ -145,6 +171,37 @@ function error() {
 }
 
 
+function chartIt() {
+    console.log("chartIt is running")
+    const ctx = document.querySelector('#myChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: xlabels,
+            datasets: [{
+                label: 'percentage recovered',
+                data: ypercentage,
+                backgroundColor: ['rgba(255, 159, 64, 0.2)'],
+                borderColor: ['rgba(255, 159, 64, 1)'],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        // Include a dollar sign in the ticks
+                        callback: function(value, index, values) {
+                            return value + "%";
+                        }
+                    }
+                }]
+            }
+        }
+    });
+    }
+
+
 // Event listener on window
 window.addEventListener('load', getData, false); // call function when page load
 
@@ -155,7 +212,8 @@ countryName.addEventListener('submit', (event) => {
     localStorage.setItem('countrySearch', countrySearch) // save in local storage
     console.log(countrySearch)
     event.target.elements.Country.value = ''  // clear the input field
-    getData() // call function
+    location.reload();
+    // getLocalData() // call function
 })
 
 // Event listener on global button

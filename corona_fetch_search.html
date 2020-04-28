@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="corona_fetch_search.css">
   <link href='https://fonts.googleapis.com/css?family=Viga' rel='stylesheet'>
   <link rel='icon' href='pictures/bacteria.png' type='image' />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 </head>
 
 <body>
@@ -28,82 +29,91 @@
         <section class="thirdRow">
           <img src="pictures/hand.png" alt="hand" class="hand">
           <section class="scrollArrow">
-            <a href="#track" class="removeHashTag">
-              <h2>Track here</h2>
+            <a href="#track">
+              <h5>Track here</h5>
               <img src="pictures/down-arrow (1).png" alt="arrow" class="scroll-down">
             </a>
           </section>
         </section>
       </section>
     </section>
-  
+
 
     <section class="slide" id="track">
       <!-- 2 slide   -->
       <section class="green_background">
         <section class="illustration">
-            <h4 class="heading"></h4>
-              <img class="img_shadow"  alt="expression picture">
-              <a href="#information" class="removeHashTag">More about covid-19 <img class="down_arrow" src="pictures/down-arrow.png"></a>
+          <h4 class="heading"></h4>
+          <img class="img_shadow" alt="expression picture">
+          <section class="scrollArrow">
+            <a href="#information">
+              <h5>More about covid-19</h5>
+              <img src="pictures/down-arrow.png" alt="arrow" class="scroll-down">
+            </a>
+          </section>
         </section>
         <section class="counter">
           <section class="search">
             <form id="countryForm">
               <input autocomplete="off" type="text" name="Country" placeholder="SEARCH FOR COUNTRY"><button
                 class="button-holder"><img src="pictures/icon_search.png" alt=""></button></input>
-              </form>
-              <img class="globalButton" src="pictures/worldwide.png" alt="world icon">
+            </form>
+            <img class="globalButton" src="pictures/worldwide.png" alt="world icon">
           </section>
-              <section class="counter_data">
-                <section class="white_box_one">
-                  <h3>confirmed</h3>
-                  <p class="totalConfirmed"></p>
-                  <h3>Recovered</h3>
-                </section>
-                <section class="white_box_two">
-                  <h3>percentageRecovered</h3>
-                  <p class="percentageRecovered"></p>
-                </section>
-              </section>
-              <section class="chart">
-                <section class="country_info">
-                <p class="countryValue"></p>
-                <p class="dateValue"></p>
-              </section>
-              </section>
+          <section class="counter_data">
+            <section class="white_box_one">
+              <h3>confirmed</h3>
+              <p class="totalConfirmed"></p>
+              <h3>Recovered</h3>
+              <p class="totalRecovered"></p>
+            </section>
+            <section class="white_box_two">
+              <h3>percentage Recovered</h3>
+              <p class="percentageRecovered"></p>
+            </section>
           </section>
+          <section class="chart">
+            <section class="country_info">
+              <p class="countryValue"></p>
+              <p class="dateValue"></p>
+            </section>
+            <section class="chartData">
+              <canvas id="myChart"></canvas>
+            </section>
+          </section>
+        </section>
       </section>
     </section>
-    
+
 
     <section class="slide" id="information">
       <!-- 3 slide   -->
       <section class="greyBackground">
         <section class="covid19Information">
-          <section class="offset">
-            <h2>About Covid-19</h2>
-          </section>
           <article class="aboutCovid19 secondFontColor">
-            <h2>What is Coronavirus disease 2019 or COVID-19?</h2>
+            <section class="offset">
+              <h2>About Covid-19</h2>
+            </section>
+            <h3>What is Coronavirus disease 2019 or COVID-19?</h3>
             <p>It is an ongoing (as of April 2020) infectious disease caused by a virus strain that results in a
               respiratory illness.</p>
             <br>
-            <h2>From where does it originate?</h2>
+            <h3>From where does it originate?</h3>
             <p>That is still to be determined, but the disease was first identified back in December 2019, in the
               capital
               of China's Hubei province, Wuhan.</p>
             <br>
-            <h2>What are the symptoms?</h2>
+            <h3>What are the symptoms?</h3>
             <p>The most common symptom include fever, cough and shortness of breath. Other symptoms may include fatigue,
               muscle pain and sore throat. Some people will not get any symptoms at all. The time from exposure to onset
               of symptoms may vary from 2-14 days.</p>
             <br>
-            <h2>How does it spread?</h2>
+            <h3>How does it spread?</h3>
             <p>The virus is primarily spread between close contact, often via small droplets produced by coughing,
               sneezing and talking. People may also become infected by touching a contaminated surface and then touching
               their eyes, nose, or mouth. The virus can survive on surfaces for up to 72 hours.</p>
             <br>
-            <h2>How do I and others prevent from getting infected or spreading the virus?</h2>
+            <h3>How do I and others prevent from getting infected or spreading the virus?</h3>
             <p>Follow these five general rules shown below! You should always stay up to date with the authorities of
               your
               residence's guidelines, laws and recommendations during these times.</p>
@@ -116,19 +126,22 @@
             <img src="pictures/keepDistance.png" alt="Stay home">
           </article>
         </section>
-      </section>
-      <section class="scrollUpArrow">
-        <a href="#home" class="removeHashTag">
-          <img src="pictures/down-arrow (1).png" alt="arrow" class="scroll-up">
-          <h2>Back to top</h2>
-        </a>
+
+        
+        <section class="scrollUpArrow">
+          <a href="#home">
+            <img src="pictures/down-arrow (1).png" alt="arrow" class="scroll-up">
+            <h5>Back to top</h5>
+          </a>
+        </section>
       </section>
       <footer>
         <p>made with ♥️ by team blobfish</p>
       </footer>
     </section>
-  </main>  
+  </main>
   <script src="corona_fetch_search.js"></script>
+  <!-- <script src="chart.js"></script> -->
 </body>
 
 </html>
