@@ -291,3 +291,42 @@ globalButton.addEventListener('click', (event) => {
     localStorage.clear('countrySearch', countrySearch); // clear local storage
     getData() // call function
 })
+
+// Country Selector script
+
+// Setup globals
+const country_search = document.querySelector('.countrySelector__searchMenu');
+const country_input = document.querySelector('.countrySelector__searchInput');
+const country_global = document.querySelector('.countrySelector__global');
+
+// Setup eventlisteners
+country_search.addEventListener('click', function () {handleEvent(event, 'search')});
+country_global.addEventListener('click', function () {handleEvent(event, 'global')});
+
+// Handle events
+function handleEvent(event, element) {
+    console.log("Handling the event for: " + element);
+    console.log(event);
+
+// make sure the browser doesn not reload the page when clicking on an <a> tag 
+event.preventDefault(); 
+        
+// set all to default
+country_input.classList.add('state--off');
+country_global.classList.add('state--off');
+country_search.classList.add('state--off');
+
+// if SEARCH is clicked
+if (element === "search") {
+    console.log("clicked on search");
+    country_input.focus(); // make the input filed active so the user can start typing
+    country_input.classList.toggle("state--off"); 
+    country_search.classList.remove("state--off");
+} 
+
+// if GLOBAL is clicekd
+else if (element === "global") {
+    console.log("clicked on global");
+    country_global.classList.toggle("state--off");
+    }
+}
