@@ -49,14 +49,35 @@
               <a href="#information">More about covid-19 <img class="down_arrow" src="pictures/down-arrow.png"></a>
           <h4 class="heading"></h4>
         </section>
+
+        <!-- <nav class="countrySelector">
+          <ul class="countrySelector__list">
+              <li class="countrySeletor__menuItem countrySelector__searchMenu state--off">
+                  <a href="#" class="countrySelector__label">Countries</a>
+                  <input type="text" class="countrySelector__searchInput state--off" placeholder="Search for country">
+              </li>
+              <li class="countrySeletor__menuItem countrySelector__global state--off">
+                  <img src="icons/world.svg" alt="" class="countrySelector__icon">
+                  <a href="" class="countrySelector__label">Global</a>
+              </li>
+          </ul>
+      </nav> -->
+
         <section class="counter">
-          <section class="search">
-            <form id="countryForm">
-              <input autocomplete="off" type="text" name="Country" placeholder="SEARCH FOR COUNTRY"><button
-                class="button-holder"><img src="pictures/icon_search.png" alt=""></button></input>
+          <section class="search countrySelector">
+            <form id="countryForm" class="countrySeletor__menuItem countrySelector__searchMenu state--off">
+              <li class="countrySeletor__menuItem countrySelector__searchMenu state--off">
+                <a href="#" class="countrySelector__label">Countries</a>
+                <input autocomplete="off" type="text" name="Country" placeholder="Search for country" class="countrySelector__searchInput state--off"></input>
+              </li>
             </form>
-            <img class="globalButton" src="pictures/worldwide.png" alt="world icon">
+              <li class="countrySeletor__menuItem countrySelector__global state--off">
+                <img src="icons/world.svg" alt="world icon" class="globalButton countrySelector__icon">
+                <a href="" class="countrySelector__label">Global</a>
+              </li>
           </section>
+
+
           <section class="counter_data">
             <section class="white_box_one">
               <h3 class="confirmedH3"></h3>
@@ -136,6 +157,7 @@
     </section>
   </main>
   <script src="corona_fetch_search.js"></script>
+  <script src="corona_fetch_version2.js"></script>
   <!-- <script src="chart.js"></script> -->
 </body>
 

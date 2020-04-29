@@ -150,12 +150,98 @@ nav ul li {
     margin: 0 auto;
 }
 
+/* Country Selector */
+.countrySeletor__menuItem {position: relative; display: flex; align-items: center; width:300px;}
 
-.search{
-    display: grid;
-    grid-template-columns: 75% 15%;
+.countrySeletor__menuItem.state--off {
+    color: #151715;
+}
+.countrySeletor__menuItem.state--off:hover {
+    color: #fff;
 }
 
+/* Default States */
+
+/*  NOTE: The usage of filters to change the icon color is because of the usage of SVG in <img>. 
+ *  It is easier, and better to replace the <img> with an <svg>. 
+ *  Then you can use the fill property in CSS to change the color. 
+ */
+.countrySeletor__menuItem.state--off .countrySelector__icon {filter:none;}
+.countrySeletor__menuItem.state--off:hover .countrySelector__icon {filter: invert(100%) sepia(2%) saturate(1%) hue-rotate(238deg) brightness(104%) contrast(100%);} 
+.countrySelector__icon {width: 20px; margin-right: 0.5rem;filter: invert(100%) sepia(2%) saturate(1%) hue-rotate(238deg) brightness(104%) contrast(100%);}
+.countrySelector__label {margin-right: 1rem; opacity: 1; }
+
+
+/* Search menu */
+.countrySelector__searchMenu {
+    margin-right: 1rem;  
+}
+
+.countrySelector__searchMenu .countrySelector__label {
+  padding-left: calc(20px + 1rem);/* same as the icon width + 1rem*/
+}
+
+.countrySelector__searchInput {
+    padding: 0.25rem 01rem;
+    font-size: 0.7rem;
+    border-radius: 1rem;
+    border: none;
+    text-transform: uppercase;
+    height: 40px;
+    width: 265px;
+    outline: none;
+    box-sizing: border-box;
+    background-image: url('icons/search.svg');
+    background-repeat: no-repeat;
+    background-position: 95% center;
+    background-size: 20px;
+    transition: 1s all ease-in-out;
+    
+    visibility: visible;
+    position: absolute; 
+    z-index: 1;
+}
+
+/* off state for the input field (showing only the background-image icon) */
+.countrySelector__searchInput.state--off {
+    width: 30px;
+    /* opacity: 0; */
+    padding: 0;
+    background-position: left center;
+    background-color: transparent;
+    color: transparent;
+}
+/* also hide the placeholder text */
+.countrySelector__searchInput.state--off::placeholder {
+    color: transparent;
+    transition: 0.6s color ease-in;
+}
+.countrySelector__searchInput::placeholder {
+    color: inherit;
+}
+
+/* show/hide label */
+.countrySelector__searchMenu .countrySelector__label {
+    transition: 0.5s opacity ease-in;
+    opacity: 0;
+    visibility: hidden;
+}        
+.countrySelector__searchMenu.state--off .countrySelector__label {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.8s;
+}
+
+.search{
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    max-width: 550px; 
+    margin: 2rem auto;
+    color: white;
+    font-size: 1.5rem;
+}
+
+/* 
 #countryForm{
     display: flex;
     justify-content: space-between;
@@ -180,10 +266,6 @@ nav ul li {
     outline: none;
 }
 
-button{
-    border: none;
-}
-    
 .button-holder img{
     position: absolute;
     top: 40%;
@@ -191,7 +273,6 @@ button{
     right: 20px;
     width: 30px;
 }
-    
 
 .globalButton {
     width: 50px;
@@ -200,7 +281,7 @@ button{
     margin-top: 2em;
     margin-left: 1em;
     
-}
+} */
 
 .counter_data{
     display: flex;
