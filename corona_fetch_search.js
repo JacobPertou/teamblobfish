@@ -280,6 +280,7 @@ countryName.addEventListener('submit', (event) => {
     localStorage.setItem('countrySearch', countrySearch) // save in local storage
     console.log(countrySearch)
     event.target.elements.Country.value = ''  // clear the input field
+    location.hash = "track";
     location.reload();
     // getLocalData() // call function
 })
