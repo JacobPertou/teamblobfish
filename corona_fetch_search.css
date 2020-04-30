@@ -198,7 +198,7 @@ nav ul li {
     border-radius: 30px;
 }
 
-.aboutCovid19 p{
+.aboutCovid19 p {
     font-family: 'roboto', 'sans-serif';
     font-size: 16px;
     text-transform: lowercase;
@@ -318,7 +318,7 @@ nav ul li {
 }
 
 /* 
-#countryForm{
+#countryForm {
     display: flex;
     justify-content: space-between;
     position: relative;
@@ -336,13 +336,13 @@ nav ul li {
     font-size: 16px;
 }
 
-#countryForm input[type="text"]{
+#countryForm input[type="text"] {
     padding: 20px;
     padding-right: 60px;
     outline: none;
 }
 
-.button-holder img{
+.button-holder img {
     position: absolute;
     top: 40%;
     transform: translateY(-105%);
