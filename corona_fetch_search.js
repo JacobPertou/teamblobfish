@@ -273,6 +273,11 @@ function chartIt() {
 // Event listener on window
 window.addEventListener('load', getData, false); // call function when page load
 
+// window.addEventListener('load', (event) => {
+//     event.preventDefault() // prevent the browsers dafault bahaviour, inserting the value in the URL
+//     getData()
+// })
+
 // Event listener for search form, take input value, save in local storage and call function
 countryName.addEventListener('submit', (event) => {
     event.preventDefault() // prevent the browsers dafault bahaviour, inserting the value in the URL
