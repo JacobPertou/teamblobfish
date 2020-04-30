@@ -195,7 +195,7 @@ function error() {
         percentageRecovered.textContent = ""
         percentageRecovered.classList.remove("red", "orange", "yellow", "light_green", "green", )
         heading.textContent = "error"
-        img.setAttribute('src', 'pictures/error.png')
+        img.setAttribute('src', 'pictures/error404.png')
 }
 
 function chartGlobalData() {
