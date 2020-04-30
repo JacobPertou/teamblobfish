@@ -151,7 +151,6 @@ function setColor(percentage2) {
         img.setAttribute('src', 'pictures/red.png')
         percentageRecovered.classList.add ("red")
         console.log("setColor is still running")
-        
     }   else if (percentage2 <= 40){
         heading.textContent = "It is getting a little better"
         recover.textContent = "percentage Recovered" 
@@ -212,28 +211,27 @@ function chartGlobalData() {
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
                     'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
+                    'rgba(75, 192, 192, 0.2)'
                 ],
                 borderColor: [
                     'rgba(255, 99, 132, 1)',
                     'rgba(54, 162, 235, 1)',
                     'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
+                    'rgba(75, 192, 192, 1)'
                 ],
                 borderWidth: 1
             }]
         },
         options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
+            legend: {
+                display: false,
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                     }]
+                }  
             }
         }
     });
@@ -258,7 +256,7 @@ function chartIt() {
             scales: {
                 yAxes: [{
                     ticks: {
-                        // Include a dollar sign in the ticks
+                        // Include a % sign in the ticks
                         callback: function(value, index, values) {
                             return value + "%";
                         }
@@ -335,3 +333,43 @@ else if (element === "global") {
     country_global.classList.toggle("state--off");
     }
 }
+
+
+
+/* 
+ *  NAVIGATION LINKS
+ *  Due to an issue with chrome and the chart libray, the following code is used for navigation
+ */
+
+// HOME
+document.querySelectorAll(".linkTo--home").forEach(function (element){
+    element.addEventListener("click", function (e) {
+        e.preventDefault();
+        console.log("[Nav] Clicked on HOME");
+        window.scroll(0,0);
+    });
+});
+
+// INFORMATION
+document.querySelectorAll(".linkTo--information").forEach(function (element){
+    element.addEventListener("click", function (e) {
+        e.preventDefault();
+        console.log("[Nav] Clicked on INFORMATION");
+        let distance = document.querySelector("#information").offsetTop;
+        console.log("Distance: "+distance);
+        window.scroll(0,distance);
+
+    });
+});
+
+// TRACK
+document.querySelectorAll(".linkTo--track").forEach(function (element){
+    element.addEventListener("click", function (e) {
+        e.preventDefault();
+        console.log("[Nav] Clicked on TRACK");
+        let distance = document.querySelector("#track").offsetTop;
+        console.log("Distance: "+distance);
+        window.scroll(0,distance);
+
+    });
+});
