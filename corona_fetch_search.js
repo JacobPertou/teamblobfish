@@ -17,6 +17,7 @@ const confirmedH3 = document.querySelector(".confirmedH3")
 const recoverH3 = document.querySelector(".recoverH3")
 
 
+
 function getData() {
 // if local storage available run getLocalData(), else run getGlobalData()
     if('countrySearch' in localStorage){
@@ -150,6 +151,7 @@ function setColor(percentage2) {
         recoverH3.textContent = "Recovered" 
         img.setAttribute('src', 'pictures/red.png')
         percentageRecovered.classList.add ("red")
+        percentageRecovered.classList.remove( "orange", "yellow", "light_green", "green", )
         console.log("setColor is still running")
         
     }   else if (percentage2 <= 40){
@@ -159,6 +161,7 @@ function setColor(percentage2) {
         recoverH3.textContent = "Recovered" 
         img.setAttribute('src', 'pictures/orange.png')
         percentageRecovered.classList.add("orange")
+        percentageRecovered.classList.remove("red", "yellow", "light_green", "green", )
         console.log("setColor is still running")
     }   else if (percentage2 <= 60){
         heading.textContent = "It is getting much better"
@@ -167,6 +170,7 @@ function setColor(percentage2) {
         recoverH3.textContent = "Recovered" 
         img.setAttribute('src', 'pictures/yellow.png')
         percentageRecovered.classList.add("yellow")
+        percentageRecovered.classList.remove("red", "orange", "light_green", "green", )
         console.log("setColor is still running")
     }   else if (percentage2 <= 80){
         heading.textContent = "It is going very good"
@@ -175,6 +179,7 @@ function setColor(percentage2) {
         recoverH3.textContent = "Recovered" 
         img.setAttribute('src', 'pictures/light_green.png')
         percentageRecovered.classList.add("light_green")
+        percentageRecovered.classList.remove("red", "orange", "yellow", "green", )
         console.log("setColor is still running")
     }   else if (percentage2 <= 100){
         heading.textContent = "It seems that everything is going great"
@@ -183,6 +188,7 @@ function setColor(percentage2) {
         recoverH3.textContent = "Recovered" 
         img.setAttribute('src', 'pictures/green.png')
         percentageRecovered.classList.add("green")
+        percentageRecovered.classList.remove("red", "orange", "yellow", "light_green", )
         console.log("setColor is still running")
     }
 };
@@ -335,3 +341,9 @@ else if (element === "global") {
     country_global.classList.toggle("state--off");
     }
 }
+
+
+// add fadeInUp class to the numbers
+percentageRecovered.classList.add("fadeInUp")
+totalConfirmed.classList.add("fadeInUp")
+totalRecovered.classList.add("fadeInUp")
