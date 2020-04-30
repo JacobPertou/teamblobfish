@@ -308,7 +308,8 @@ nav ul li {
     max-width: 550px; 
     margin: 1rem auto;
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
+    font-weight: bold;
 }
 
 /* 
@@ -460,6 +461,8 @@ nav ul li {
 
 .scrollUpArrow h2 {
     font-size: 0.8em;
+    font-family: 'roboto';
+    text-transform: unset;
 }
 
 .scrollUpArrow img {
