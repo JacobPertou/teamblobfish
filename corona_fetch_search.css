@@ -22,6 +22,10 @@ a {
     color: unset;
 }
 
+a:hover {
+  cursor: pointer;
+}
+
 h1 {
     font-size: 40px;
 }
