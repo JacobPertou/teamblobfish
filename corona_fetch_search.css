@@ -22,6 +22,10 @@ a {
     color: unset;
 }
 
+a:hover {
+  cursor: pointer;
+}
+
 h1 {
     font-size: 40px;
 }
@@ -145,6 +149,10 @@ nav ul li {
     display: grid;
     grid-template-rows: auto auto auto;
     margin: 0 auto;
+}
+
+.fakeFooter {
+    height: 10vh;
 }
 
 /* Styles for Slide Three */
