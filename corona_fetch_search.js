@@ -298,7 +298,8 @@ countryName.addEventListener('submit', (event) => {
 globalButton.addEventListener('click', (event) => {
     event.preventDefault() // prevent the browsers dafault bahaviour, inserting the value in the URL
     localStorage.clear('countrySearch', countrySearch); // clear local storage
-    getData() // call function
+    location.reload();
+   // getData() // call function
 })
 
 // Country Selector script
