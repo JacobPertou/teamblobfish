@@ -151,6 +151,10 @@ nav ul li {
     margin: 0 auto;
 }
 
+.fakeFooter {
+    height: 10vh;
+}
+
 /* Styles for Slide Three */
 
 .greyBackground {
